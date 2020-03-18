@@ -178,14 +178,13 @@ h2{
 .top-picks{
   display: grid;
   grid-gap: .7rem;
-  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 
   width: 90%;
   margin: 0 auto;
 }
 // styling for alle top picks
 .top-picks section{
-  height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
