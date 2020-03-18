@@ -248,14 +248,11 @@ h2{
   font-size: .7em;
   width: 40%;
   border: 1px solid black;
-  display: flex;
-  flex-flow: column;
   padding: 5px;
   color: black;
   margin: 5vh auto 5vh;
   border-radius: 3px;
-}
-.flere-vine:hover{
+}.flere-vine:hover{
   background-color: $button-hover;
 }
 
