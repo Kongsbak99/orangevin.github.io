@@ -1,19 +1,11 @@
 
+// varibales import
+@import "variables.scss";
 
-/* Color variables*/
-$amber: #F06520;
 
-$primary-text: black;
-$secondary-text: #696969;
-
-/* background colors */
-$button-hover: #d6d6d6;
-$button-hover-2: rgba(82,82,82,0.6);
-
-$primary-background: white;
-$secondary-background: #ededed;
-$tertiary-background: #404040;
-
+// produkt side stylings
+@import "udvalg.scss";
+@import "produkt-side.scss";
 
 
 
@@ -35,9 +27,19 @@ a{
  text-decoration: none;
  color: $primary-text;
 }
+p{
+  margin-left: 0;
+  margin-right: 0;
+}
 h2{
   font-size: 1.2em;
   text-align: center;
+}
+.header-bottom-border{
+  display: flex;
+  margin: 0 auto 30px;
+  width: 50px;
+  border-bottom: 2px solid $amber;
 }
 
 
@@ -54,8 +56,8 @@ h2{
   text-align: center;
   display: block;
   width: 100%;
-  height: 5vh;
-  padding-top: 2px;
+  // height: 5vh;
+  // padding-top: 2px;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
@@ -94,14 +96,16 @@ h2{
 }
 
 /* Style the active link (or home/logo) */
-.active {
-  padding: 5px 25px 0 25px;
+.nav-section {
+  display: flex;
+  flex-direction: column;
+}
+.active{
   height: 10vh;
-  color: $amber;
-
+  margin: 0 auto;
 }
 .active img{
-  height: 100%;
+  height: 10vh;
   display: flex;
   margin: 0 auto;
 }
@@ -129,12 +133,16 @@ h2{
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .header-section div{
   font-family: 'Baloo Chettan 2', cursive;
   padding-top: 30vh;
   font-size: 1.1em;
   color: $primary-background;
   padding-left: 20px;
+}
+.header-section div h1{
+  text-align: left;
 }
 .header-section div h2{
   font-size: .8em;
@@ -171,9 +179,9 @@ h2{
   display: grid;
   grid-gap: .7rem;
   grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-  height: 80vh;
+  max-height: 85vh;
   width: 90%;
-  margin: 0 5%;
+  margin: 0 auto;
 }
 // styling for alle top picks
 .top-picks section{
@@ -184,16 +192,16 @@ h2{
   font-size: .7em
 }
 .top-picks section img{
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   margin: 0 auto;
 }
 .top-picks section h4{
-  margin-bottom: .8em;
+  margin-bottom: .6em;
 }
 .top-picks section p{
   margin-top: 0;
-  margin-bottom: .5em;
+  margin-bottom: .3em;
 }
 .top-picks section h5{
   margin: auto 0 0 0;
@@ -204,6 +212,18 @@ h2{
   margin-left: 5px;
   color: $secondary-text;
 
+}
+.top-picks section a{
+  text-align: center;
+  font-size: .8em;
+  width: 5rem;
+  border: 1px solid black;
+  padding: 1px;
+  color: black;
+  margin: 10px auto;
+  border-radius: 3px;
+}.top-picks section a:hover{
+  background-color: $button-hover;
 }
 // styling for hvert enkelt top pick
 .top-pick-1{
@@ -223,6 +243,19 @@ h2{
 
 }
 
+// hvad er orangevin?
+.hvad-er-orangevin{
+  display: flex;
+  flex-direction: column;
+}
+.hvad-er-orangevin section{
+  margin: 5px auto;
+  padding: 5px;
+  max-width: 700px;
+}
+
+
+
 /* show more wines button */
 .flere-vine{
   text-align: center;
@@ -233,7 +266,7 @@ h2{
   flex-flow: column;
   padding: 5px;
   color: black;
-  margin: 7vh auto 5vh;
+  margin: 3vh auto 5vh;
   border-radius: 3px;
 }
 .flere-vine:hover{
@@ -243,28 +276,58 @@ h2{
 
 /* INSPIRATION section */
 .inspiration-header{
- margin: 6vh auto 4vh;
+ margin: 7vh auto 2vh;
 }
 
 .inspiration{
   display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: minmax(80%, 1fr);
-  height: 90vh;
-  width: 80%;
-  margin: 0 10%;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0 auto 50px;
+  max-width: 1000px;
 }
-.inspiration-1{
-  background-color: blue;
-  height: 100%;
+
+.inspiration a div{
+  min-width: 300px;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  border-radius: 5px;
+}.inspiration a div h3{
+  font-size: 1.8em;
+  line-height: 1;
+  font-family: $primary-header;
+  color: $primary-background;
+  margin: auto 5px 5px;
+}
+
+
+.inspiration-3{
+  background-image: url("../images/inspiration/sådan-drikker-man-orangevin.png");
 }
 .inspiration-2{
-  background-color: red;
-  height: 100%;
+  background-image: url("../images/inspiration/stig-thorsteinsson.png");
 }
-.inspiration-3{
-  background-color: yellow;
-  height: 100%;
+.inspiration-1{
+  background-image: url("../images/inspiration/valg-af-orangevin.png");
+}
+
+.find-orangevin{
+  text-align: center;
+  font-size: .7em;
+  width: 300px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  color: black;
+  margin: 0 auto 10vh;
+  border-radius: 3px;
+}
+.find-orangevin:hover{
+  background-color: $button-hover;
 }
 
 
@@ -275,8 +338,12 @@ footer{
   background-color: $secondary-background;
   text-align: center;
 }
-.footer-header{
-  margin-bottom: 4rem;
+.footer h2{
+  margin: .83em 0;
+}
+.footer-header img{
+  height: 100px;
+  margin-left: -20px;
 }
 .footer-nav{
   font-size: .7em;
@@ -288,7 +355,7 @@ footer{
   width: 80%;
 }
 .footer-nav ul li:first-child{
-  margin-top: 2rem;
+  margin-top: .5rem;
 }
 .footer-nav ul li{
   margin: 0;
@@ -347,7 +414,7 @@ footer{
 
 
 /* breakpoint for larger screens */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
 
 
@@ -360,7 +427,8 @@ footer{
   }
   /* resizing background image */
   .header-section{
-    background-size: 200%;
+    background-size: 220%;
+    background-position: 50% 60%;
     // 85vh plus 2vh som er taget for "top info baren"
     height: 87vh;
   }
@@ -371,21 +439,34 @@ footer{
 
 
   .top-picks{
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-    height: 25vh;
-    width: 90%;
-    margin: 0 5%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 1rem;
+    width: 80%;
   }
   .flere-vine{
     width: 250px;
   }
+  .top-picks section img{
+    height: 110px;
+    width: 110px;
+  }
+  .top-picks section{
+    font-size: .9em;
+  }
 
 
+// hvad er orangevin?
   .hvad-er-orange-vin{
     height: 70vh;
   }
+
+
+
+  // // inspiration SECTION
+  // .inspiration-section{
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 
   /* Footer styling */
   .footer-nav ul li{
@@ -417,6 +498,7 @@ footer{
   }
   .topnav #myLinks{
     display: flex;
+    flex-direction: row;
     position: absolute;
     right: 6rem;
     top: 7vh;
@@ -427,8 +509,8 @@ footer{
   .topnav #myLinks a:first-child{
     margin-left: auto;
   }
-  .active img{
-    margin: 0 auto 0 0 ;
+  .active{
+    margin: 0 auto 0 30px;
   }
   .shopping-cart{
     left: auto;
@@ -437,8 +519,30 @@ footer{
   }
 
   // Main styling
+  /* resizing background image */
+  .header-section{
+    background-size: 200%;
+  }
+
+  // top picks SECTION
+  .top-picks{
+    width: 75%;
+  }
+  .top-picks section{
+    font-size: 1.1em;
+  }
+  .top-picks section img{
+    height: 130px;
+    width: 130px;
+  }
 
 
+
+  // .inspiration{
+  //   // grid-template-columns: repeat(3, minmax(30%, 1fr));
+  //   margin: 0 auto;
+  //   min-height: 30vh;
+  // }
 
 
 
@@ -449,6 +553,10 @@ footer{
 
 
 @media (min-width: 1025px){
+  .header-section{
+    background-size: 120%;
+    background-position: 50% 70%;
+  }
 
 
 
