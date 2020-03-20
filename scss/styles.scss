@@ -10,6 +10,8 @@
 
 // andre sider sider stylings
 @import "historie.scss";
+@import "om-os.scss";
+@import "footer.scss";
 
 
 *{
@@ -36,6 +38,9 @@ p{
 h2{
   font-size: 1.2em;
   text-align: center;
+}
+.amber{
+  color: $amber;
 }
 .header-bottom-border{
   display: flex;
